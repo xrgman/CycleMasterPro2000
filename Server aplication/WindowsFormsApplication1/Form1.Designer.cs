@@ -38,35 +38,31 @@
             this.quickSaveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loadFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.detailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.setComPortToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.connectToServerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.TChatView = new System.Windows.Forms.TextBox();
+            this.TChatSend = new System.Windows.Forms.TextBox();
+            this.BSend = new System.Windows.Forms.Button();
+            this.Chart = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.LCurrentPower = new System.Windows.Forms.Label();
+            this.LTime = new System.Windows.Forms.Label();
+            this.LHeartBeat = new System.Windows.Forms.Label();
+            this.LRoundPerMin = new System.Windows.Forms.Label();
+            this.LSpeed = new System.Windows.Forms.Label();
+            this.LDistance = new System.Windows.Forms.Label();
+            this.LEnergy = new System.Windows.Forms.Label();
+            this.BComConnect = new System.Windows.Forms.Button();
+            this.BReset = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Chart)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem1,
-            this.editToolStripMenuItem,
-            this.optionsToolStripMenuItem,
-            this.detailsToolStripMenuItem});
+            this.optionsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1019, 24);
@@ -88,32 +84,26 @@
             // saveFileToolStripMenuItem
             // 
             this.saveFileToolStripMenuItem.Name = "saveFileToolStripMenuItem";
-            this.saveFileToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
+            this.saveFileToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.saveFileToolStripMenuItem.Text = "save file";
             // 
             // quickSaveToolStripMenuItem
             // 
             this.quickSaveToolStripMenuItem.Name = "quickSaveToolStripMenuItem";
-            this.quickSaveToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
+            this.quickSaveToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.quickSaveToolStripMenuItem.Text = "quick save";
             // 
             // loadFileToolStripMenuItem
             // 
             this.loadFileToolStripMenuItem.Name = "loadFileToolStripMenuItem";
-            this.loadFileToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
+            this.loadFileToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.loadFileToolStripMenuItem.Text = "load file";
             // 
             // quitToolStripMenuItem
             // 
             this.quitToolStripMenuItem.Name = "quitToolStripMenuItem";
-            this.quitToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
+            this.quitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.quitToolStripMenuItem.Text = "quit";
-            // 
-            // editToolStripMenuItem
-            // 
-            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
-            this.editToolStripMenuItem.Text = "edit";
             // 
             // optionsToolStripMenuItem
             // 
@@ -123,12 +113,6 @@
             this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
             this.optionsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.optionsToolStripMenuItem.Text = "Options";
-            // 
-            // detailsToolStripMenuItem
-            // 
-            this.detailsToolStripMenuItem.Name = "detailsToolStripMenuItem";
-            this.detailsToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
-            this.detailsToolStripMenuItem.Text = "Details";
             // 
             // setComPortToolStripMenuItem
             // 
@@ -142,142 +126,144 @@
             this.connectToServerToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
             this.connectToServerToolStripMenuItem.Text = "connect to Server";
             // 
-            // textBox1
+            // TChatView
             // 
-            this.textBox1.Enabled = false;
-            this.textBox1.ForeColor = System.Drawing.SystemColors.Menu;
-            this.textBox1.Location = new System.Drawing.Point(15, 380);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(977, 373);
-            this.textBox1.TabIndex = 0;
+            this.TChatView.Enabled = false;
+            this.TChatView.ForeColor = System.Drawing.SystemColors.Menu;
+            this.TChatView.Location = new System.Drawing.Point(15, 380);
+            this.TChatView.Multiline = true;
+            this.TChatView.Name = "TChatView";
+            this.TChatView.ReadOnly = true;
+            this.TChatView.Size = new System.Drawing.Size(977, 373);
+            this.TChatView.TabIndex = 0;
             // 
-            // textBox2
+            // TChatSend
             // 
-            this.textBox2.Location = new System.Drawing.Point(15, 759);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(897, 20);
-            this.textBox2.TabIndex = 2;
+            this.TChatSend.Location = new System.Drawing.Point(15, 759);
+            this.TChatSend.Name = "TChatSend";
+            this.TChatSend.Size = new System.Drawing.Size(897, 20);
+            this.TChatSend.TabIndex = 2;
             // 
-            // button1
+            // BSend
             // 
-            this.button1.Location = new System.Drawing.Point(918, 759);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "send";
-            this.button1.UseVisualStyleBackColor = true;
+            this.BSend.Location = new System.Drawing.Point(918, 759);
+            this.BSend.Name = "BSend";
+            this.BSend.Size = new System.Drawing.Size(75, 23);
+            this.BSend.TabIndex = 3;
+            this.BSend.Text = "send";
+            this.BSend.UseVisualStyleBackColor = true;
             // 
-            // chart1
+            // Chart
             // 
-            this.chart1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.chart1.BackSecondaryColor = System.Drawing.Color.Transparent;
-            this.chart1.BorderlineColor = System.Drawing.Color.Black;
+            this.Chart.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.Chart.BackSecondaryColor = System.Drawing.Color.Transparent;
+            this.Chart.BorderlineColor = System.Drawing.Color.Black;
             chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
+            this.Chart.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(484, 35);
-            this.chart1.Name = "chart1";
-            this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Berry;
+            this.Chart.Legends.Add(legend1);
+            this.Chart.Location = new System.Drawing.Point(484, 35);
+            this.Chart.Name = "Chart";
+            this.Chart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Berry;
             series1.ChartArea = "ChartArea1";
             series1.Legend = "Legend1";
             series1.Name = "Series1";
-            this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(508, 339);
-            this.chart1.TabIndex = 4;
-            this.chart1.Text = "chart1";
-            this.chart1.Click += new System.EventHandler(this.chart1_Click);
+            this.Chart.Series.Add(series1);
+            this.Chart.Size = new System.Drawing.Size(508, 339);
+            this.Chart.TabIndex = 4;
+            this.Chart.Text = "chart1";
+            this.Chart.Click += new System.EventHandler(this.chart1_Click);
             // 
-            // label2
+            // LCurrentPower
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.label2.Location = new System.Drawing.Point(12, 35);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(108, 18);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Current Power:";
+            this.LCurrentPower.AutoSize = true;
+            this.LCurrentPower.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.LCurrentPower.Location = new System.Drawing.Point(12, 35);
+            this.LCurrentPower.Name = "LCurrentPower";
+            this.LCurrentPower.Size = new System.Drawing.Size(108, 18);
+            this.LCurrentPower.TabIndex = 6;
+            this.LCurrentPower.Text = "Current Power:";
             // 
-            // label3
+            // LTime
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.label3.Location = new System.Drawing.Point(12, 58);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(45, 18);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Time:";
+            this.LTime.AutoSize = true;
+            this.LTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.LTime.Location = new System.Drawing.Point(12, 58);
+            this.LTime.Name = "LTime";
+            this.LTime.Size = new System.Drawing.Size(45, 18);
+            this.LTime.TabIndex = 7;
+            this.LTime.Text = "Time:";
             // 
-            // label4
+            // LHeartBeat
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.label4.Location = new System.Drawing.Point(12, 83);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(78, 18);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "HeartBeat:";
+            this.LHeartBeat.AutoSize = true;
+            this.LHeartBeat.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.LHeartBeat.Location = new System.Drawing.Point(12, 83);
+            this.LHeartBeat.Name = "LHeartBeat";
+            this.LHeartBeat.Size = new System.Drawing.Size(78, 18);
+            this.LHeartBeat.TabIndex = 8;
+            this.LHeartBeat.Text = "HeartBeat:";
+            this.LHeartBeat.Click += new System.EventHandler(this.label4_Click);
             // 
-            // label5
+            // LRoundPerMin
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.label5.Location = new System.Drawing.Point(12, 105);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(119, 18);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "Rounds Per Min:";
+            this.LRoundPerMin.AutoSize = true;
+            this.LRoundPerMin.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.LRoundPerMin.Location = new System.Drawing.Point(12, 105);
+            this.LRoundPerMin.Name = "LRoundPerMin";
+            this.LRoundPerMin.Size = new System.Drawing.Size(119, 18);
+            this.LRoundPerMin.TabIndex = 9;
+            this.LRoundPerMin.Text = "Rounds Per Min:";
             // 
-            // label6
+            // LSpeed
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.label6.Location = new System.Drawing.Point(12, 130);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(54, 18);
-            this.label6.TabIndex = 10;
-            this.label6.Text = "Speed:";
+            this.LSpeed.AutoSize = true;
+            this.LSpeed.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.LSpeed.Location = new System.Drawing.Point(12, 130);
+            this.LSpeed.Name = "LSpeed";
+            this.LSpeed.Size = new System.Drawing.Size(54, 18);
+            this.LSpeed.TabIndex = 10;
+            this.LSpeed.Text = "Speed:";
             // 
-            // label7
+            // LDistance
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.label7.Location = new System.Drawing.Point(12, 155);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(70, 18);
-            this.label7.TabIndex = 11;
-            this.label7.Text = "Distance:";
+            this.LDistance.AutoSize = true;
+            this.LDistance.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.LDistance.Location = new System.Drawing.Point(12, 155);
+            this.LDistance.Name = "LDistance";
+            this.LDistance.Size = new System.Drawing.Size(70, 18);
+            this.LDistance.TabIndex = 11;
+            this.LDistance.Text = "Distance:";
             // 
-            // label8
+            // LEnergy
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.label8.Location = new System.Drawing.Point(12, 180);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(58, 18);
-            this.label8.TabIndex = 12;
-            this.label8.Text = "Energy:";
+            this.LEnergy.AutoSize = true;
+            this.LEnergy.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.LEnergy.Location = new System.Drawing.Point(12, 180);
+            this.LEnergy.Name = "LEnergy";
+            this.LEnergy.Size = new System.Drawing.Size(58, 18);
+            this.LEnergy.TabIndex = 12;
+            this.LEnergy.Text = "Energy:";
+            this.LEnergy.Click += new System.EventHandler(this.label8_Click);
             // 
-            // button2
+            // BComConnect
             // 
-            this.button2.Location = new System.Drawing.Point(15, 336);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(110, 38);
-            this.button2.TabIndex = 13;
-            this.button2.Text = "Com Connect";
-            this.button2.UseVisualStyleBackColor = true;
+            this.BComConnect.Location = new System.Drawing.Point(15, 336);
+            this.BComConnect.Name = "BComConnect";
+            this.BComConnect.Size = new System.Drawing.Size(110, 38);
+            this.BComConnect.TabIndex = 13;
+            this.BComConnect.Text = "Com Connect";
+            this.BComConnect.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // BReset
             // 
-            this.button3.Location = new System.Drawing.Point(131, 336);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(105, 38);
-            this.button3.TabIndex = 14;
-            this.button3.Text = "Reset";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.BReset.Location = new System.Drawing.Point(131, 336);
+            this.BReset.Name = "BReset";
+            this.BReset.Size = new System.Drawing.Size(105, 38);
+            this.BReset.TabIndex = 14;
+            this.BReset.Text = "Reset";
+            this.BReset.UseVisualStyleBackColor = true;
+            this.BReset.Click += new System.EventHandler(this.button3_Click);
             // 
             // Form1
             // 
@@ -287,20 +273,20 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1019, 790);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.BSend);
+            this.Controls.Add(this.BReset);
+            this.Controls.Add(this.TChatSend);
             this.Controls.Add(this.menuStrip1);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.chart1);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.TChatView);
+            this.Controls.Add(this.BComConnect);
+            this.Controls.Add(this.LEnergy);
+            this.Controls.Add(this.Chart);
+            this.Controls.Add(this.LDistance);
+            this.Controls.Add(this.LCurrentPower);
+            this.Controls.Add(this.LSpeed);
+            this.Controls.Add(this.LTime);
+            this.Controls.Add(this.LRoundPerMin);
+            this.Controls.Add(this.LHeartBeat);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
@@ -308,7 +294,7 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Chart)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -321,24 +307,22 @@
         private System.Windows.Forms.ToolStripMenuItem quickSaveToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem loadFileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem quitToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem optionsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem detailsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem setComPortToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem connectToServerToolStripMenuItem;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.TextBox TChatView;
+        private System.Windows.Forms.TextBox TChatSend;
+        private System.Windows.Forms.Button BSend;
+        private System.Windows.Forms.DataVisualization.Charting.Chart Chart;
+        private System.Windows.Forms.Label LCurrentPower;
+        private System.Windows.Forms.Label LTime;
+        private System.Windows.Forms.Label LHeartBeat;
+        private System.Windows.Forms.Label LRoundPerMin;
+        private System.Windows.Forms.Label LSpeed;
+        private System.Windows.Forms.Label LDistance;
+        private System.Windows.Forms.Label LEnergy;
+        private System.Windows.Forms.Button BComConnect;
+        private System.Windows.Forms.Button BReset;
     }
 }
 
