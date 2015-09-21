@@ -11,9 +11,11 @@ namespace WindowsFormsApplication1
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
-        [STAThread]
+        [MTAThread]
         static void Main()
         {
+
+            System.Threading.Thread cliend = new System.Threading.Thread(SynchronousSocketClient.StartClient);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());

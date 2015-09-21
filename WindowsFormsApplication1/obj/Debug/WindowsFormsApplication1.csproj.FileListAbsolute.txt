@@ -38,3 +38,6 @@ C:\Users\rene\Documents\CycleMasterPro2000\WindowsFormsApplication1\obj\Debug\Wi
 C:\Users\rene\Documents\CycleMasterPro2000\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.CommForm.resources
 C:\Users\rene\Documents\CycleMasterPro2000\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
 C:\Users\rene\Documents\CycleMasterPro2000\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
+C:\Users\kees2125\Documents\GitHub\CycleMasterPro2000\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+C:\Users\kees2125\Documents\GitHub\CycleMasterPro2000\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
+C:\Users\kees2125\Documents\GitHub\CycleMasterPro2000\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
