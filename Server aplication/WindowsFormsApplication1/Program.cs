@@ -15,10 +15,10 @@ namespace WindowsFormsApplication1
         static void Main()
         {
 
-            System.Threading.Thread cliend = new System.Threading.Thread(SynchronousSocketClient.StartClient);
+            System.Threading.Thread cliend = new System.Threading.Thread(Controller.StartClient);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new Login());
         }
     }
 }

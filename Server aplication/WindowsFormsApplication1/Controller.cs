@@ -2,19 +2,16 @@
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
-using System.IO.Ports;
 
-public class SynchronousSocketClient
+
+public class Controller
 {
 
-    private SerialPort commPort;
-
-    public SynchronousSocketClient()
+    public Controller()
     {
-        commPort = new SerialPort();
+       
     }
 
-    public void connectToBike
 
 
 
