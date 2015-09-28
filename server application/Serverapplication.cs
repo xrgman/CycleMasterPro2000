@@ -4,6 +4,7 @@ using System.Net.Sockets;
 using System.Net;
 using System.Threading;
 using System.Net.Security;
+using System.IO;
 
 namespace server_application
 {
@@ -12,11 +13,19 @@ namespace server_application
         List<UserClient> clients = new List<UserClient>();
         List<Physician> physicians = new List<Physician>();
 
+        //get data from files
+        List<string> stringClients = new List<string>();
+        List<string> stringPhysicians = new List<string>();
+
         public Serverapplication()
         {
+            //load data from files:
+            LoadData();
+
             IPAddress ip = IPAddress.Parse("127.0.0.1");
             TcpListener listener = new System.Net.Sockets.TcpListener(ip, 130);
             listener.Start();
+
 
             while (true)
             {
@@ -64,6 +73,22 @@ namespace server_application
                 }
             }
             return "wrong username!";
+        }
+
+        public void LoadData()
+        {
+            string projecPath = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())); ;
+            projecPath += "/data";
+
+            DirectoryInfo clientDirectory = new DirectoryInfo(projecPath + "/clients");
+            DirectoryInfo[] clientsArray = clientDirectory.GetDirectories();
+            foreach (DirectoryInfo d in clientsArray)
+                stringClients.Add(d.Name);
+
+            DirectoryInfo physicianDirectory = new DirectoryInfo(projecPath + "/physicians");
+            DirectoryInfo[] physiciansArray = physicianDirectory.GetDirectories();
+            foreach (DirectoryInfo d in physiciansArray)
+                stringPhysicians.Add(d.Name);
         }
 
      

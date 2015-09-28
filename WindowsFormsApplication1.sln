@@ -7,7 +7,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "server application", "serve
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client apllication", "client aplication\WindowsFormsApplication1\Client apllication.csproj", "{26C2FD5F-F5F9-48F5-B4DA-71A275DFC151}"
 EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Shared Server Client", "Shared Server Client\Shared Server Client.shproj", "{53AF387F-C55B-426B-A781-372B0794B205}"
+EndProject
 Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		Shared Server Client\Shared Server Client.projitems*{53af387f-c55b-426b-a781-372b0794b205}*SharedItemsImports = 13
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
