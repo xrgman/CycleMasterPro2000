@@ -13,6 +13,14 @@ namespace Network
         public Session(DateTime startedDate)
         {
             this.startedDate = startedDate;
+
+            /* Test waarden
+            AddMeasurement(new Measurement(10, 10, 10, 10, 10, 10, "0:00", 10));
+            AddMeasurement(new Measurement(20, 30, 40, 10, 49, 20, "0:01", 20));
+            AddMeasurement(new Measurement(34, 50, 12, 19, 39, 21, "0:02", 30));
+            AddMeasurement(new Measurement(30, 19, 28, 39, 27, 12, "0:03", 40));
+            AddMeasurement(new Measurement(29, 12, 9, 12, 94, 29,  "0:04", 50));
+            */
         }
 
         public void AddMeasurement(Measurement measurement)

@@ -26,13 +26,13 @@ namespace WindowsFormsApplication1
         {
             DEFAULT,
             BETWEEN_VALUES,
-            BETWEEN_DATES
+            BETWEEN_TIMES
         }
 
         public Graph()
         {
             InitializeComponent();
-            CurrentSearchType = SearchTypes.DEFAULT;       // Standaard plotten (Wachten op signalen)
+            CurrentSearchType = SearchTypes.DEFAULT;       // Alle aanwezige waarden plotten
             setup();
         }
 
@@ -46,21 +46,23 @@ namespace WindowsFormsApplication1
         // Initiele opzet van de chart
         public void plot()
         {
+            // Alles clearen
             foreach (Series obj in chart1.Series)
                 obj.Points.Clear();
 
             int min = 0;
             int max = 0;
-            // Series gaan vullen met onze items en waarden
+            // Enumerator voor onze measurements
             IEnumerator<Measurement> measurements;
             if (valueMinBox.Text.Length > 0)
                 min = int.Parse(valueMinBox.Text);
             if (valueMaxBox.Text.Length > 0)
                 max = int.Parse(valueMaxBox.Text);
 
+            // Bij normale searchType, alle waarden plotten
             if (CurrentSearchType.Equals(SearchTypes.DEFAULT))
                 measurements = session.getMeasurement().GetEnumerator();
-            else
+            else // Bij 'BETWEEN_VALUES' waarden alle signalen tussen min en max box
                 measurements = session.getMeasurement().Where(signal => 
                     signal.actual_power > min && signal.actual_power < max ||
                     signal.distance > min && signal.distance < max ||
@@ -77,17 +79,29 @@ namespace WindowsFormsApplication1
             }
         }
 
-        // Per measurement een plot uitvoeren, in plaats van steeds weer rijen opnieuw erdoorheen jassen
+        
         private void plotMeasurement(Measurement m)
+        {   // Measurement uitlezen en plotten
+            chart1.Series["actualpower"].Points.AddXY(m.time, m.actual_power);
+            chart1.Series["energy"].Points.AddXY(m.time, m.energy);
+            chart1.Series["pulse"].Points.AddXY(m.time, m.pulse);
+            chart1.Series["requestedpower"].Points.AddXY(m.time, m.requested_power);
+            chart1.Series["rpm"].Points.AddXY(m.time, m.rpm);
+            chart1.Series["speed"].Points.AddXY(m.time, m.speed);
+        }
+
+       
+        private void button3_Click(object sender, EventArgs e)
         {
-            DateTime t = DateTime.Now;
-            
-            chart1.Series["pulse"].Points.AddXY(t.ToString("hh:mm:ss"), m.pulse);
-            chart1.Series["rpm"].Points.AddXY(t.ToString("hh:mm:ss"), m.rpm);
-            chart1.Series["actualpower"].Points.AddXY(t.ToString("hh:mm:ss"), m.actual_power);
-            chart1.Series["requestedpower"].Points.AddXY(t.ToString("hh:mm:ss"), m.requested_power);
-            chart1.Series["speed"].Points.AddXY(t.ToString("hh:mm:ss"), m.speed);
-            chart1.Series["energy"].Points.AddXY(t.ToString("hh:mm:ss"), m.energy);
+            // Opnieuw plotten
+            plot();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            // Alles weergeven
+            CurrentSearchType = SearchTypes.DEFAULT;
+            plot();
         }
     }
 }
