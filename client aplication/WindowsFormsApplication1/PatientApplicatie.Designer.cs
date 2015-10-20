@@ -28,9 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormClient));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -42,6 +39,7 @@
             this.setComPortToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.connectToServerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.startVideoTrainingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.minVideoWorkoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewOldDataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.findToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -84,10 +82,9 @@
             this.connectedUsers = new System.Windows.Forms.ComboBox();
             this.newClient = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.minVideoWorkoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
+            this.graph1 = new WindowsFormsApplication1.Graph();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -99,9 +96,10 @@
             this.usersToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(865, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1182, 24);
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // toolStripMenuItem1
             // 
@@ -167,6 +165,13 @@
             this.startVideoTrainingToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
             this.startVideoTrainingToolStripMenuItem.Text = "15 min video workout";
             this.startVideoTrainingToolStripMenuItem.Click += new System.EventHandler(this.startVideoTrainingToolStripMenuItem_Click);
+            // 
+            // minVideoWorkoutToolStripMenuItem
+            // 
+            this.minVideoWorkoutToolStripMenuItem.Name = "minVideoWorkoutToolStripMenuItem";
+            this.minVideoWorkoutToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
+            this.minVideoWorkoutToolStripMenuItem.Text = "45 min video workout";
+            this.minVideoWorkoutToolStripMenuItem.Click += new System.EventHandler(this.minVideoWorkoutToolStripMenuItem_Click);
             // 
             // viewOldDataToolStripMenuItem
             // 
@@ -577,28 +582,12 @@
             this.newClient.UseVisualStyleBackColor = true;
             this.newClient.Click += new System.EventHandler(this.newClient_Click);
             // 
-            // chart1
+            // graph1
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(533, 36);
-            this.chart1.Name = "chart1";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(311, 593);
-            this.chart1.TabIndex = 39;
-            this.chart1.Text = "chart1";
-            // 
-            // minVideoWorkoutToolStripMenuItem
-            // 
-            this.minVideoWorkoutToolStripMenuItem.Name = "minVideoWorkoutToolStripMenuItem";
-            this.minVideoWorkoutToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
-            this.minVideoWorkoutToolStripMenuItem.Text = "45 min video workout";
-            this.minVideoWorkoutToolStripMenuItem.Click += new System.EventHandler(this.minVideoWorkoutToolStripMenuItem_Click);
+            this.graph1.Location = new System.Drawing.Point(519, 35);
+            this.graph1.Name = "graph1";
+            this.graph1.Size = new System.Drawing.Size(651, 311);
+            this.graph1.TabIndex = 39;
             // 
             // FormClient
             // 
@@ -608,8 +597,8 @@
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(865, 650);
-            this.Controls.Add(this.chart1);
+            this.ClientSize = new System.Drawing.Size(1182, 650);
+            this.Controls.Add(this.graph1);
             this.Controls.Add(this.newClient);
             this.Controls.Add(this.RTBChatText);
             this.Controls.Add(this.connectedUsers);
@@ -654,9 +643,9 @@
             this.Name = "FormClient";
             this.Text = "Client App";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormClient_FormClosed);
+            this.Load += new System.EventHandler(this.FormClient_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -715,8 +704,9 @@
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.ToolStripMenuItem usersToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem findToolStripMenuItem;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private System.Windows.Forms.ToolStripMenuItem minVideoWorkoutToolStripMenuItem;
+        private System.ComponentModel.BackgroundWorker backgroundWorker2;
+        private Graph graph1;
     }
 }
 

@@ -290,6 +290,7 @@ namespace WindowsFormsApplication1
         private void connectedUsers_SelectedIndexChanged(object sender, EventArgs e)
         {
             currentUser = (User) connectedUsers.SelectedItem;
+            graph1.setSession(((UserClient)currentUser).lastSession());
             RefreshFields();
             
         }
@@ -399,5 +400,24 @@ namespace WindowsFormsApplication1
 
         }
 
+        private void FormClient_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void graph1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void graph1_Load_1(object sender, EventArgs e)
+        {
+
+        }
     } 
 }
