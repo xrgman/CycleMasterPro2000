@@ -59,23 +59,28 @@ namespace WindowsFormsApplication1
             if (valueMaxBox.Text.Length > 0)
                 max = int.Parse(valueMaxBox.Text);
 
-            // Bij normale searchType, alle waarden plotten
-            if (CurrentSearchType.Equals(SearchTypes.DEFAULT))
-                measurements = session.getMeasurement().GetEnumerator();
-            else // Bij 'BETWEEN_VALUES' waarden alle signalen tussen min en max box
-                measurements = session.getMeasurement().Where(signal => 
-                    signal.actual_power > min && signal.actual_power < max ||
-                    signal.distance > min && signal.distance < max ||
-                    signal.energy > min && signal.energy < max ||
-                    signal.rpm > min && signal.rpm < max ||
-                    signal.pulse > min && signal.pulse < max ||
-                    signal.speed > min && signal.speed < max
-                ).GetEnumerator();
+            try {
+                // Bij normale searchType, alle waarden plotten
+                if (CurrentSearchType.Equals(SearchTypes.DEFAULT))
+                    measurements = session.getMeasurement().GetEnumerator();
+                else // Bij 'BETWEEN_VALUES' waarden alle signalen tussen min en max box
+                    measurements = session.getMeasurement().Where(signal =>
+                        signal.actual_power > min && signal.actual_power < max ||
+                        signal.distance > min && signal.distance < max ||
+                        signal.energy > min && signal.energy < max ||
+                        signal.rpm > min && signal.rpm < max ||
+                        signal.pulse > min && signal.pulse < max ||
+                        signal.speed > min && signal.speed < max
+                    ).GetEnumerator();
 
-            while (measurements.MoveNext())
+                while (measurements.MoveNext())
+                {
+                    Measurement item = (Measurement)measurements.Current;
+                    plotMeasurement(item);
+                }
+            } catch (NullReferenceException ex)
             {
-                Measurement item = (Measurement)measurements.Current;
-                plotMeasurement(item);                
+                measurements = null;
             }
         }
 
