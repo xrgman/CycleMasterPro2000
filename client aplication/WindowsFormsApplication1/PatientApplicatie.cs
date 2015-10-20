@@ -132,8 +132,15 @@ namespace WindowsFormsApplication1
         {
             if (label.InvokeRequired)
             {
-                SetTextCallback d = new SetTextCallback(SetLabelText);
-                this.Invoke(d, new object[] { label, text });
+                try
+                {
+                    SetTextCallback d = new SetTextCallback(SetLabelText);
+                    this.Invoke(d, new object[] { label, text });
+                }catch(Exception e)
+                {
+                    //TODO catch die shit
+                }
+               
             }
             else
             {
@@ -290,7 +297,6 @@ namespace WindowsFormsApplication1
         private void connectedUsers_SelectedIndexChanged(object sender, EventArgs e)
         {
             currentUser = (User) connectedUsers.SelectedItem;
-            graph1.setSession(((UserClient)currentUser).lastSession());
             RefreshFields();
             
         }
@@ -400,22 +406,12 @@ namespace WindowsFormsApplication1
 
         }
 
-        private void FormClient_Load(object sender, EventArgs e)
+        private void saveFileToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            network.sendSaveData();     
         }
 
-        private void graph1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
-
-        private void graph1_Load_1(object sender, EventArgs e)
+        public void DataSaved(bool succesfull)
         {
 
         }
