@@ -159,14 +159,14 @@ namespace WindowsFormsApplication1
                 Measurement measurement = bike.GetMeasurement();
                 if (measurement != null)
                 {
-                    SetLabelText(actualPowerLabel,measurement.actual_power.ToString());
+                    SetLabelText(actualPowerLabel,measurement.actual_power.ToString() + " Watt");
                     SetLabelText(timeLabel, measurement.time);
-                    SetLabelText(heartBeatLabel,measurement.pulse.ToString());
+                    SetLabelText(heartBeatLabel,measurement.pulse.ToString() + " bpm");
                     SetLabelText(rpmLabel,measurement.rpm.ToString());
-                    SetLabelText(speedLabel,measurement.speed.ToString());
-                    SetLabelText(distanceLabel,measurement.distance.ToString());
-                    SetLabelText(energyLabel,measurement.energy.ToString());
-                    SetLabelText(requestedPowerLabel,measurement.requested_power.ToString());
+                    SetLabelText(speedLabel,measurement.speed.ToString() + " km/h");
+                    SetLabelText(distanceLabel,measurement.distance.ToString() + " km");
+                    SetLabelText(energyLabel,measurement.energy.ToString() + " kJ");
+                    SetLabelText(requestedPowerLabel,measurement.requested_power.ToString() + " Watt");
                 }
                 //Send measurement to the server
                 network.sendMeasurement(measurement,((UserClient)currentUser).physician,"Last");
@@ -329,14 +329,14 @@ namespace WindowsFormsApplication1
                     }
                     if (measurement != null)
                     {
-                        SetLabelText(actualPowerLabel, measurement.actual_power.ToString());
+                        SetLabelText(actualPowerLabel, measurement.actual_power.ToString() + " Watt");
                         SetLabelText(timeLabel, measurement.time);
-                        SetLabelText(heartBeatLabel, measurement.pulse.ToString());
+                        SetLabelText(heartBeatLabel, measurement.pulse.ToString() + " bpm");
                         SetLabelText(rpmLabel, measurement.rpm.ToString());
-                        SetLabelText(speedLabel, measurement.speed.ToString());
-                        SetLabelText(distanceLabel, measurement.distance.ToString());
-                        SetLabelText(energyLabel, measurement.energy.ToString());
-                        SetLabelText(requestedPowerLabel, measurement.requested_power.ToString());
+                        SetLabelText(speedLabel, measurement.speed.ToString() + " km/h");
+                        SetLabelText(distanceLabel, measurement.distance.ToString() + " km");
+                        SetLabelText(energyLabel, measurement.energy.ToString() + " kJ");
+                        SetLabelText(requestedPowerLabel, measurement.requested_power.ToString() + " Watt");
                     }
                     else
                     {

@@ -11,7 +11,7 @@ namespace WindowsFormsApplication1
         public Login()
         {
             InitializeComponent();
-            network = new Networkconnect("127.0.0.1", 130);
+            network = new Networkconnect("192.168.1.114", 130);
             Thread connectionThread = new Thread(new ThreadStart(ConnectThread));
             connectionThread.IsBackground = true;
             connectionThread.Start();

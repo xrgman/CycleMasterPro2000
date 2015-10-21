@@ -85,6 +85,7 @@
             this.connectedUsers = new System.Windows.Forms.ComboBox();
             this.newClient = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.label8 = new System.Windows.Forms.Label();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
@@ -99,7 +100,7 @@
             this.usersToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(865, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(523, 24);
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -117,26 +118,26 @@
             // saveFileToolStripMenuItem
             // 
             this.saveFileToolStripMenuItem.Name = "saveFileToolStripMenuItem";
-            this.saveFileToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.saveFileToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
             this.saveFileToolStripMenuItem.Text = "save file";
             this.saveFileToolStripMenuItem.Click += new System.EventHandler(this.saveFileToolStripMenuItem_Click);
             // 
             // quickSaveToolStripMenuItem
             // 
             this.quickSaveToolStripMenuItem.Name = "quickSaveToolStripMenuItem";
-            this.quickSaveToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.quickSaveToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
             this.quickSaveToolStripMenuItem.Text = "quick save";
             // 
             // loadFileToolStripMenuItem
             // 
             this.loadFileToolStripMenuItem.Name = "loadFileToolStripMenuItem";
-            this.loadFileToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.loadFileToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
             this.loadFileToolStripMenuItem.Text = "load file";
             // 
             // quitToolStripMenuItem
             // 
             this.quitToolStripMenuItem.Name = "quitToolStripMenuItem";
-            this.quitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.quitToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
             this.quitToolStripMenuItem.Text = "quit";
             // 
             // optionsToolStripMenuItem
@@ -230,7 +231,7 @@
             this.LCurrentPower.AutoSize = true;
             this.LCurrentPower.BackColor = System.Drawing.Color.Transparent;
             this.LCurrentPower.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.LCurrentPower.Location = new System.Drawing.Point(12, 35);
+            this.LCurrentPower.Location = new System.Drawing.Point(12, 65);
             this.LCurrentPower.Name = "LCurrentPower";
             this.LCurrentPower.Size = new System.Drawing.Size(108, 18);
             this.LCurrentPower.TabIndex = 6;
@@ -241,7 +242,7 @@
             this.LTime.AutoSize = true;
             this.LTime.BackColor = System.Drawing.Color.Transparent;
             this.LTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.LTime.Location = new System.Drawing.Point(12, 58);
+            this.LTime.Location = new System.Drawing.Point(12, 88);
             this.LTime.Name = "LTime";
             this.LTime.Size = new System.Drawing.Size(45, 18);
             this.LTime.TabIndex = 7;
@@ -252,7 +253,7 @@
             this.LHeartBeat.AutoSize = true;
             this.LHeartBeat.BackColor = System.Drawing.Color.Transparent;
             this.LHeartBeat.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.LHeartBeat.Location = new System.Drawing.Point(12, 83);
+            this.LHeartBeat.Location = new System.Drawing.Point(12, 113);
             this.LHeartBeat.Name = "LHeartBeat";
             this.LHeartBeat.Size = new System.Drawing.Size(78, 18);
             this.LHeartBeat.TabIndex = 8;
@@ -263,7 +264,7 @@
             this.LRoundPerMin.AutoSize = true;
             this.LRoundPerMin.BackColor = System.Drawing.Color.Transparent;
             this.LRoundPerMin.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.LRoundPerMin.Location = new System.Drawing.Point(12, 105);
+            this.LRoundPerMin.Location = new System.Drawing.Point(12, 135);
             this.LRoundPerMin.Name = "LRoundPerMin";
             this.LRoundPerMin.Size = new System.Drawing.Size(139, 18);
             this.LRoundPerMin.TabIndex = 9;
@@ -274,7 +275,7 @@
             this.LSpeed.AutoSize = true;
             this.LSpeed.BackColor = System.Drawing.Color.Transparent;
             this.LSpeed.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.LSpeed.Location = new System.Drawing.Point(12, 130);
+            this.LSpeed.Location = new System.Drawing.Point(12, 160);
             this.LSpeed.Name = "LSpeed";
             this.LSpeed.Size = new System.Drawing.Size(54, 18);
             this.LSpeed.TabIndex = 10;
@@ -285,7 +286,7 @@
             this.LDistance.AutoSize = true;
             this.LDistance.BackColor = System.Drawing.Color.Transparent;
             this.LDistance.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.LDistance.Location = new System.Drawing.Point(12, 155);
+            this.LDistance.Location = new System.Drawing.Point(12, 185);
             this.LDistance.Name = "LDistance";
             this.LDistance.Size = new System.Drawing.Size(70, 18);
             this.LDistance.TabIndex = 11;
@@ -296,7 +297,7 @@
             this.LEnergy.AutoSize = true;
             this.LEnergy.BackColor = System.Drawing.Color.Transparent;
             this.LEnergy.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.LEnergy.Location = new System.Drawing.Point(12, 180);
+            this.LEnergy.Location = new System.Drawing.Point(12, 210);
             this.LEnergy.Name = "LEnergy";
             this.LEnergy.Size = new System.Drawing.Size(58, 18);
             this.LEnergy.TabIndex = 12;
@@ -390,7 +391,7 @@
             this.timeLabel.AutoSize = true;
             this.timeLabel.BackColor = System.Drawing.Color.Transparent;
             this.timeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.timeLabel.Location = new System.Drawing.Point(63, 58);
+            this.timeLabel.Location = new System.Drawing.Point(63, 88);
             this.timeLabel.Name = "timeLabel";
             this.timeLabel.Size = new System.Drawing.Size(0, 18);
             this.timeLabel.TabIndex = 21;
@@ -400,7 +401,7 @@
             this.actualPowerLabel.AutoSize = true;
             this.actualPowerLabel.BackColor = System.Drawing.Color.Transparent;
             this.actualPowerLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.actualPowerLabel.Location = new System.Drawing.Point(126, 35);
+            this.actualPowerLabel.Location = new System.Drawing.Point(126, 65);
             this.actualPowerLabel.Name = "actualPowerLabel";
             this.actualPowerLabel.Size = new System.Drawing.Size(0, 18);
             this.actualPowerLabel.TabIndex = 22;
@@ -410,7 +411,7 @@
             this.heartBeatLabel.AutoSize = true;
             this.heartBeatLabel.BackColor = System.Drawing.Color.Transparent;
             this.heartBeatLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.heartBeatLabel.Location = new System.Drawing.Point(96, 83);
+            this.heartBeatLabel.Location = new System.Drawing.Point(96, 113);
             this.heartBeatLabel.Name = "heartBeatLabel";
             this.heartBeatLabel.Size = new System.Drawing.Size(0, 18);
             this.heartBeatLabel.TabIndex = 23;
@@ -420,7 +421,7 @@
             this.rpmLabel.AutoSize = true;
             this.rpmLabel.BackColor = System.Drawing.Color.Transparent;
             this.rpmLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rpmLabel.Location = new System.Drawing.Point(157, 105);
+            this.rpmLabel.Location = new System.Drawing.Point(157, 135);
             this.rpmLabel.Name = "rpmLabel";
             this.rpmLabel.Size = new System.Drawing.Size(0, 18);
             this.rpmLabel.TabIndex = 24;
@@ -430,7 +431,7 @@
             this.speedLabel.AutoSize = true;
             this.speedLabel.BackColor = System.Drawing.Color.Transparent;
             this.speedLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.speedLabel.Location = new System.Drawing.Point(71, 130);
+            this.speedLabel.Location = new System.Drawing.Point(71, 160);
             this.speedLabel.Name = "speedLabel";
             this.speedLabel.Size = new System.Drawing.Size(0, 18);
             this.speedLabel.TabIndex = 25;
@@ -440,7 +441,7 @@
             this.distanceLabel.AutoSize = true;
             this.distanceLabel.BackColor = System.Drawing.Color.Transparent;
             this.distanceLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.distanceLabel.Location = new System.Drawing.Point(88, 155);
+            this.distanceLabel.Location = new System.Drawing.Point(88, 185);
             this.distanceLabel.Name = "distanceLabel";
             this.distanceLabel.Size = new System.Drawing.Size(0, 18);
             this.distanceLabel.TabIndex = 26;
@@ -450,7 +451,7 @@
             this.energyLabel.AutoSize = true;
             this.energyLabel.BackColor = System.Drawing.Color.Transparent;
             this.energyLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.energyLabel.Location = new System.Drawing.Point(71, 180);
+            this.energyLabel.Location = new System.Drawing.Point(71, 210);
             this.energyLabel.Name = "energyLabel";
             this.energyLabel.Size = new System.Drawing.Size(0, 18);
             this.energyLabel.TabIndex = 27;
@@ -460,7 +461,7 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(12, 208);
+            this.label4.Location = new System.Drawing.Point(12, 238);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(130, 18);
             this.label4.TabIndex = 28;
@@ -471,7 +472,7 @@
             this.requestedPowerLabel.AutoSize = true;
             this.requestedPowerLabel.BackColor = System.Drawing.Color.Transparent;
             this.requestedPowerLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.requestedPowerLabel.Location = new System.Drawing.Point(148, 208);
+            this.requestedPowerLabel.Location = new System.Drawing.Point(148, 238);
             this.requestedPowerLabel.Name = "requestedPowerLabel";
             this.requestedPowerLabel.Size = new System.Drawing.Size(0, 18);
             this.requestedPowerLabel.TabIndex = 29;
@@ -585,6 +586,16 @@
             this.newClient.UseVisualStyleBackColor = true;
             this.newClient.Click += new System.EventHandler(this.newClient_Click);
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(11, 31);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(214, 25);
+            this.label8.TabIndex = 40;
+            this.label8.Text = "Latest measurement:";
+            // 
             // chart1
             // 
             chartArea1.Name = "ChartArea1";
@@ -609,7 +620,8 @@
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(865, 650);
+            this.ClientSize = new System.Drawing.Size(523, 650);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.chart1);
             this.Controls.Add(this.newClient);
             this.Controls.Add(this.RTBChatText);
@@ -716,8 +728,9 @@
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.ToolStripMenuItem usersToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem findToolStripMenuItem;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private System.Windows.Forms.ToolStripMenuItem minVideoWorkoutToolStripMenuItem;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
     }
 }
 
