@@ -39,6 +39,7 @@ namespace WindowsFormsApplication1
         public void setSession(Session s)
         {
             this.session = s;
+            
             CurrentSearchType = SearchTypes.DEFAULT;
             plot();
         }
@@ -62,16 +63,16 @@ namespace WindowsFormsApplication1
             try {
                 // Bij normale searchType, alle waarden plotten
                 if (CurrentSearchType.Equals(SearchTypes.DEFAULT))
-                    measurements = session.getMeasurement().GetEnumerator();
+                    measurements = session.getMeasurement().OrderBy(m => m.time).GetEnumerator();
                 else // Bij 'BETWEEN_VALUES' waarden alle signalen tussen min en max box
-                    measurements = session.getMeasurement().Where(signal =>
+                    measurements = session.getMeasurement().OrderBy(m => m.time).Where(signal =>
                         signal.actual_power > min && signal.actual_power < max ||
                         signal.distance > min && signal.distance < max ||
                         signal.energy > min && signal.energy < max ||
                         signal.rpm > min && signal.rpm < max ||
                         signal.pulse > min && signal.pulse < max ||
                         signal.speed > min && signal.speed < max
-                    ).GetEnumerator();
+                    ).GetEnumerator();                
 
                 while (measurements.MoveNext())
                 {
